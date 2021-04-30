@@ -326,7 +326,6 @@ Parameterized Tests
     Create an instance varaible for each "column" of test data
     Create your own test cases(s) using the instance variable as the source of the test variable
 
-Now from the very beginning developer a simple calculator
 
 
         
