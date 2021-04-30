@@ -1,0 +1,342 @@
+https://medium.com/@karlrombauts/setting-up-unit-testing-for-java-in-vs-code-with-maven-3dc75579122f
+
+Install Relevant Java Extensions
+    Java Extension Pack
+    Coverage Gutter
+
+Start a new Java project
+    Maven for Java comes with java extension pack
+    How to get started with Maven
+        What is Maven
+            standard way in which Projects can be built
+            Powerful feature is dependency management
+        MVN
+            install maven from https://maven.apache.org/
+            add maven to path
+        Create your Maven Project
+            groudId tells what group your project comes under
+            artifcatId is the project name
+        pom.xml
+            Project Object Model
+            has all the details about your project
+            this is where you will tell maven what it should do
+            groupId and artifactId are the same values given in the cmd line
+            packaging is the package format of the artifact
+                default value is jar
+            version indicates the version number of the artifact
+                SNAPSHOT present, indicates the version is still in dev and may not be stable
+            name is the project name
+        Super POM
+            a lot of the configuration is present in Super POM, maintained internally by Maven
+            pom.xml extends Super Pom to get all the config present in super POM
+            All java source code is present inside src/main/java
+            All java test code is present inside src/test/java
+        Need to tell maven to use Java 1.8 instead so use Maven Plugins
+        Maven Plugins
+            Maven compiler plugin to indicate which Java version to use
+            requires adding lines to pom.xml
+            Plugins get some action done in maven, the compiler plugin compiles the source files
+        Maven Dependencies
+            Dependencies are just existing libraries
+            Add gson dependency or junit
+        Transitive Dependencies
+            Maven cna figure out that A depends on B and B depends on C
+            B and C are transitive Dependencies
+        Custom Maven Repo
+        Adding the test class
+        Maven Buld LifeCycle and Phases
+            Default Lifecycle: Building and deploying the artifact
+                Validate: Checks if all necessary information is available for the project
+                Compile: Used to compile the source files.
+                    mvn compile, folder created with all the complied files
+                Test: Used to run all the unit tests present in the project. Using junit, unit test can be written.
+                    mvn test
+                Package: Run all the above phases and then package the artifact. Package into a jar file
+                    mvn package
+                    jar file is created inside the target folder
+                Verify: Ensure that quality criteria is met in the project
+                Install: Install the package in a local repo
+                    mvn install
+                Deploy: Used to deploy the package to a remote repo
+                Clean: cleans up everything inside the target folder
+                    mvn clean
+            Clean lifecycle: Deals with project cleaning
+            Site lifecycle: This deals with Site documentation
+    ctrl + shift + p for command palette
+        select Maven: Create Maven Project
+        prompted to select an archetype
+            basic template that installs all the things you might need and sets up your project for you
+    maven-archetype-quickstart
+        select the latest version
+    groupId meant to be a unique value for your project
+        domain name, no publish whatever you want
+    artifactId meant to be your project name
+        VSCodeJavaUnitTests
+    version
+        default by clicking enter
+    package
+        select default
+    Maven project is setup
+
+Correct Folder Structure
+    src folder has a main folder and a test in the src folder
+    inside both these folders you should have the same folder structure
+    Maven will look for files with Test.java suffix when running tests so a good convention is to name
+        [ClassName]test.java
+    missing the .classpath and .project files as well as /target folder
+        VS code is hiding the files OR have not been generated automatically
+        reload the files with ctrl + shift + p
+
+Upgrade to JUNIT5
+    replaced some dependencies
+    change the import statements in AppTest.java
+    JUNIT now working
+    import org.junit.jupiter.api.Test cannot be resolved
+    need to run mvn install first
+        dont forget dependency are in the dependencies tag
+
+Write some tests
+    The compiler compliance specified is 1.7 but JRE 15 is used
+    change the JRE to 15 and right click update project
+    fixed some settings to show output of tests, had to change java test log to verbsose
+
+Step 6 Code Coverage!
+    Install some maven plugins
+    Added to the bottom, JaCoCo is a plugin that will generate a report of your code coverage
+    mvn jacoco:prepare-agent test install jacoco:report ran this in terminal
+    EHH couldnt get it to work, moving on found Java Test Runner works okay
+
+https://www.tutorialspoint.com/junit/index.htm
+
+JUNIT - Home
+    JUNIT important for test-driven development
+
+JUNIT - Overview
+    Check the functionality of an application to ensure it runs as per
+        requirements
+    What is JUnit?
+        "First testing then coding" setting up the test data for a piece of code
+            that can be tested first and then implemented
+        Increases productivity and stability
+    Features of JUnit
+        open source framework
+        provides annotations to identify test methods
+        provides assertions for testing expected results
+        provides test runners for running tests
+        Write code faster
+        Simple
+        JUnit tests can be run automatically and they check their own results
+        Organized into test suites
+    What is a Unit Test case?
+        A part of code that ensures that another part of code works as intended
+        Characterized by known input and expected output
+        known input tests precondition and the expected output test post-condition
+        At least two unit tests for each requirement, one positive and one negative
+
+Enviorment Setup
+    mvn quickstart project
+    added dependencies, mvn installed
+    reload window
+
+Test Framework
+    Regression Testing Framework to implement unit testing in Java and accelerate
+        programming speed and increase quality of code
+    Integrated with Eclipse, Ant, Maven
+    Features
+        Fixtures
+        Test suites
+        Test runners
+        JUnit classes
+    Fixtures
+        a fixed state of a set of objects used as a baseline for running tests
+        to ensure that there is a well-known and fixed enviornment in which tests
+            are runs so that results are repeatable
+        setUp() runs before every test invocation
+        tearDown() runs after every test method
+    Test Suites
+        Bundles a few unit test cases and runs them together
+            @Runwith and @Suite are used to run the suite test
+    Test Runers 
+        Used for executing the test cases
+    JUnit Classes
+        Assert - Contains a set of assert methods
+        TestCase - contains a test case that define the fixture to run multiple tests
+        TestResult - Contains methods to collect the results of executing a test case
+
+Basic Usage
+    Create a class MessageUntil
+
+JUnit API
+    Assert - a set of assert methods
+    TestCase - A test case defines the fixture to run multiple tests
+    TestResult - A TestResult collects the results of executing a test case
+    TestSuite - A composite of tests
+    Assert Class - a set of assertion methods useful for writing tests
+        only failed assertions are recorded
+        void assertEquals(boolean expected, boolean actual)
+            checks that two prims/objects are equal
+        void assertFalse(boolean condition)
+            checks that a condition is false
+        void assertNotNull(Object object)
+            Checks that an object isnt null
+        void assertNull(Object object)
+            Check that an object is null
+        void asertTrue(boolean condition)
+            check that a condition is true
+        void fail()
+            fails a test with no message
+    TestCase Class - defines the fixture to run multiple tests
+        int countTestCases()
+            counts the number tests executed by run
+        TestResult createResult()
+            creates a default TestResult object
+        String getName()
+            get name of a TestCase
+        TestResult run()
+            convenience method to run this rest
+        void run(TestResult result)
+            Runs the test case and collects the results in TestResult
+        void setName(String name)
+            set the name of a TestCase
+        void setUp()
+            sets up the fixture
+        void tearDown()
+            tears down the fixture
+        String toString()
+            returns a string representation of the test case
+    TestResult Class - collects the result of executing a test case
+        Instance of the Collecting Parameter pattern
+        Test framework distinguishes between failures and errors
+            Failure anticipated and checked with assertions
+            Errors are unanticipated problems
+        void addError(Test test, Throwable t)
+            adds an error to the list of errors
+        void addFailure(Test test, AssertionFailedError t)
+            adds a failure to the list of failures
+        void endTest(Test test)
+            infroms the result that a test was completed
+        int errorCount()
+            gets the number of detected errors
+        Enumeration<TestFailure> errors()
+            returns an Enumeration for the errors
+        int failureCount()
+            gets the number of detected failures
+        void run(TestCase test)
+            Runs a TestCase
+        int runCount()
+            Gets the number of run tests
+        void startTest(Test test)
+            informs the result that a test will be started
+        void stop()
+            Marks that the test run should stop
+    TestSuite Class - Composite of Tests
+        void addTest(Test test)
+            Adds a test to the suite
+        void addTestSuit(Class<? extends TestCase> testClass)
+            Adds the tests from the given class to the suite
+        int countTestCases()
+            Counts the number of test cases that will be run by this test
+        String getName()
+            Returns the name of the suite
+        void run(TestResult result)
+            Runs the tests and collects their result in a TestResult
+        void setName(String name)
+            sets the name of the suite
+        Test testAt(int index)
+            Returns the test at the given index
+        int testCount()
+            Returns the number of tests in this suite
+        static Test warning(String message)
+            Returns a test which will fail and log a warning message
+
+Writing a Test
+
+Using Assertion
+    Assert Class - a set of assertion methods useful for writing tests
+        void assertEquals(boolean expected, boolean actual)
+            checks that two prims/objects are equal
+        void assertTrue(boolean condition)
+            checks that a condition is true
+        void assertFalse(boolean condition)
+            checks that a condition is false
+        void assertNotNull(Object object)
+            checks that an object isnt null
+        void assertNull(Object object)
+            check that an object is null
+        void assetSame(object1, object2)
+            tests if two object references point to the same object
+        void assertNotSame(object1, object2)
+            tests if two object references do not point to the same object
+        void assertArrayEquals(expectedArray, resultArray)
+            tests whether two arrays are equal to each other
+        void fail()
+            fails a test with no message
+
+Annotation
+    Meta tags you can add to your code and apply them to methods or in class
+    which methods are going to run before and after test methods
+    which methods run before and after all methods
+    which methods or classes will be ignored during execution
+    @Test
+        Method to be run as test
+    @Before
+        Causes a method to run before each Test method
+    @After
+        If allocate resources in Before method, you need to release them after the test runs
+        Causes a method to be run after the test method
+    @BeforeClass
+        Causes it to be run once before any of the test methods in the class
+    @AfterClass
+        Perform the method after all tests have finished
+        Clean-up activities
+    @Ignore
+        Ignore the test and the test will not be executed
+
+Execution Procedure
+    Defines the order of methods called
+    Before and After Class only execute once
+    Before and After execute for each test case
+    In between before and after, each test case executes
+
+Executing Tests
+    Not really informative, everything is already handle by VSCode
+
+Test Suite
+    Used to bindle a few unit test cases and run them together
+    This is beneficial but cant we just use separate classes and compartmentalize that way?
+
+Ignore Test
+    Code is not completly ready just use ignore
+    @Ignore will not be executed, nore will any of its test methods
+
+Time Test
+    Handy option of timeout
+    Test case takes more time than specified test times out
+
+Exceptions Test
+    Option of tracing the excpetion handling of code
+    Code throws a desired exception or not
+    Expected parameter is used along with @Test annotation
+
+Parameterized Tests
+    Allow a developer to run the same test over and over again using different values
+    Annotate test class with @RunWith(Parameterized.class)
+    Create a public static method annotated with @Parameters that returns a collection of Objects as test data set
+    Create a public constructore that takes in what is equaivalent to one "row" of test data
+    Create an instance varaible for each "column" of test data
+    Create your own test cases(s) using the instance variable as the source of the test variable
+
+Now from the very beginning developer a simple calculator
+
+
+        
+
+
+
+    
+
+        
+
+        
+            
+
