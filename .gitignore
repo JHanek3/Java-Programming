@@ -8,5 +8,10 @@
 /UnitTesting/VSCodeJavaUnitTests/.classpath
 /UnitTesting/VSCodeJavaUnitTests/.project
 
+/GUI/javaswing/.settings
+/GUI/javaswing/target
+/GUI/javaswing/.classpath
+/GUI/javaswing/.project
+
 
 

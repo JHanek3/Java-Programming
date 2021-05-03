@@ -1,0 +1,55 @@
+Introduction
+    Java Swing is suited for beginners and intermediate Swing developers
+    Swing is the principal GUI toolkit for the Java programming language
+        Used to create Graphical user interfaces with java
+    Platform independent, customizable, extensible, configurable, lightweight
+    rich set of widgets
+    part of the JFC
+    JAVAFX used for advanced animations
+
+JAVA Swing first programs
+    Create a simple applicaiton, terminate applicaiton with a quit button, display a frame icon, display a tooltip, and use mnemonics and display standard colors
+    Java swing components are basic building blocks of a Java Swing application
+    JFrame, JButton, JLabel
+    JFrame is a top-level window with a title and border, used to organize other components
+    JButton is a push button used to perform an action
+    JLabel is a component used to display a short text string or image
+    Java Swing First Example
+        SimpleEx.java
+        Window can be resized, maximized, or minimized
+        Import the swing classes
+        SimpleEx inherits from the JFrame component
+            JFrame top-level
+        basic purpose of containers is to hold components of the application
+        Good programming practice to not put the application code into constructors, but delegate the task to a specified method
+            Method being initUI();
+        Sets are pretty self explanatory
+            setLocation - centers the window on the screen
+            setDefault - close the window if we click on the close button
+        EventQueue.invokeLater
+            create an instance of code and make it visible on screen
+            method places the applicaiton on the Swing Event Queue
+            used to ensure that all UI updates are concurrency-safe
+                prevents the GUI from hanging
+    JButton Example
+        Have a Button, when click on the button, the application terminates
+        QuitButtonEx, ive added notes inside the programs
+    JFrame Icon
+        Display an icon on a frame, shown in the left part of the title bar
+        FrameIconEx.java
+    JavaSwing tooltip
+        Tooltips are internal application's help system
+        Swing shows a small window if we hover a mouse pointer over an object that has a tooltip set
+        TooltipEx.java
+    Swing mnemonics
+        Mnemonics are shortcut keys that activate a component that supports mnemonics
+            labels, buttons or menu items
+        MnemonicEx.java
+    JavaSwing standard colors
+        color class defines 13 color values
+        StandardColoursEx.java
+        Example shows thirteen JLabel components, JLabel usually used to display text, but it can display colors too
+    JavaSwing mouse move events
+        MouseMotionAdapter is used for receiving mouse motion events
+        Display the coordinates of a mouse pointer in a label component
+        MouseMoveEventEx.java
