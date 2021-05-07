@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class UserInterface00 {
-    private TodoList todoList;
+    private TodoList00 todoList;
     private Scanner scanner;
 
-    public UserInterface00(TodoList todoList, Scanner scanner) {
+    public UserInterface00(TodoList00 todoList, Scanner scanner) {
         this.todoList = todoList;
         this.scanner = scanner;
     }

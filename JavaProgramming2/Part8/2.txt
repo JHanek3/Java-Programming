@@ -1,0 +1,51 @@
+Similarity of Objects
+Equals method checks by default whether the object given as a parameter has the same reference as the object is being compared too
+    are the two objects the same
+    objects are only equal if they are compared to themselves, if you make a new object with same variables its not the same as the previous object
+String equals, declares two strings are identical in content to be equal event if they are seperate objects
+    replaced the default equals with own implementation
+If we want to compare our own classes using equals method, then it must be defined in the same class
+    accepts Object-type reference as a parameter
+    comparison first looks at the references, followed by checking the parameter's object type with instanceof
+    @Override
+    public boolean equals(Object comparedObject) {
+        // if the variables are located in the same place, they're the same
+        if (this == comparedObject) {
+            return true;
+        }
+
+        // if comparedObject is not of type Book, the objects aren't the same
+        if (!(comparedObject instanceof Book)) {
+            return false;
+        }
+
+        // let's convert the object to a Book-object
+        Book comparedBook = (Book) comparedObject;
+
+        // if the instance variables of the objects are the same, so are the objects
+        if (this.name.equals(comparedBook.name) &&
+            this.published == comparedBook.published &&
+            this.content.equals(comparedBook.content)) {
+            return true;
+        }
+
+        // otherwise, the objects aren't the same
+        return false;
+    }
+You use an object first and then the book object
+The reliance on default methods such as equals, is why Java demands that variables added to ArrayList and HashMap are of reference type
+    each reference type comes with default methods
+hashCode method can be used for approximate comparison of objects
+    method creates a hash code, a number that tells a bit about the object's content
+    if two objects have the same has value, they may be equal
+    the default implementation creates a hashcode value based on the object's reference, which means that books having the same content are nonetheless different objects
+    to fix this
+        the class that the key belongs to must overwrite the hashCode method in addition to the equals method
+        must be overwritten so that it gives the same numerical result for all objects with the same content
+
+for a class to be used as a HashMap's key
+    the equals method, so that all equal or approximately equal objects cause the comparison to return true and all false for all ther est
+    hashCode, so that as few objects as possible eund up with the same hash value
+Exercise
+    Same date
+    Hash for date

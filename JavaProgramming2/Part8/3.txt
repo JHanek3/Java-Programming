@@ -1,0 +1,11 @@
+Grouping data using hash maps
+A hash map has at most one value per key
+    what if assign multiple values to a single key?
+is is possible to use lists as values in a hash map
+    ArrayList<>
+Need to initially attach an empty list to the key
+define with HashMap<>ArrayListString
+Exercise
+    Dictionary of Many Translations
+    Storage Facility
+    

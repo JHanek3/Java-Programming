@@ -1,0 +1,56 @@
+Hash Map
+HashMap is one of the most widely used of Java's pre-built data structures
+    used whenever data is stored as key-value pairs
+    values can be added, retrieved, and deleted using keys
+    HashMap<String, String> postalCodes = new HashMap<>();
+    postalCodes.put("00710", "Helsinki");
+    postalCodes.put("90014", "Oulu");
+    postalCodes.put("33720", "Tampere");
+    postalCodes.put("33014", "Tampere");
+
+    System.out.println(postalCodes.get("00710"));
+
+If the hash map does not contain the key used, the get method returns a null reference
+
+Using hash map
+    requires import java.util.HashMap
+    two parameters, type of the key and type of the value
+    HashMap<String, Integer> hashmap = new HashMap<>();
+
+Add - put(key, value)
+Retrieve - get(key)
+Exercise
+    nicknames.java
+
+Hash map has a maximum of one value per key
+    new key-value pair added, but the key already has a value the old key is deleted
+
+When should hash maps be used?
+    searching by a key is very fast
+    hash maps work well when we know exactly what we are looking for
+    hash maps have no internal order
+    hash maps provides quick access to a specific key or keys, while the list is used to maintain order
+
+containsKey is used to check for the existence of a key
+Exercise
+    Abbreviations
+
+Search for part of its title
+    get method in hash map is not applicable as its used to search by a specific key
+    go through the values of a hash map by using a for-each loop on the set returned by keySet()
+    this.directory.keySet()
+Exercise
+    Program.java
+    Print me another hash map
+
+HashMap expects that only reference-variables are passed to it
+    use Integer
+    Integer, Double, Character
+
+getOrDefault - searches for the key passed as a parameter from the HashMap
+    if key is not found it returns the value of the second parameter passed to it
+Exercise
+    IOU
+
+
+    
