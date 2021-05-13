@@ -1,0 +1,16 @@
+Object Polymorphism
+    encountered situations where reference-type variables have other types besides their own one
+    all objects are of type Object
+    In addition to each variable's original type, each variable can also be represented by the types of interfaces it implmements and classes that it inherits
+        String class inherits the Object class, Object class does not inherit a String class
+    java.lang.Object -> java.lang.String
+    in java each class can inherit one class at most
+        as such a class may indirectly inherit more than a single class
+Programming Exercise
+    Herds
+Programming Exercise
+    Animals
+
+Programmers can expect all objects to have the methods toString, hashCode, and equals because each object is of type Object
+    in addition to their own type
+Inheritence and interface allow us to implmement methods and constructors that handle many kinds of objects

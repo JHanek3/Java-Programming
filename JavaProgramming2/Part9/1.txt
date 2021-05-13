@@ -1,0 +1,67 @@
+Inheritance and Interaces
+    Learn to create classes that inherit from other classes and also classes that implement one or more interfaces
+    Objects can be represented by any of its actual types
+Class Inheritance
+    classes are used to clarify the concepts of the problem domain in OOP
+    solutions rise from the interactions between objects which are created from classes
+    every java class extends the class Object
+    each class can directly extend only one class
+        a class indirectly inherits all properties of the classes it extends
+        superclass is the class whose properties are inherited
+        subclass is the class that receives the properties
+    super()
+        through this process the object variables defined in the superclass are initiated with their initial values
+        super is used to calls a constructor of the superclass
+        super must be on the first line
+Programming Exercise
+    ABC
+
+Access modifiers privated, protected, public
+    private - only visible to the internal methods of the classes
+    subclasses will not see it, nore have direct means to access it
+    subclass sees everything that is defined with the public modifier
+    protected - to define some variables or methods that are visible to subclasses but invisible to everything else
+
+Calling the constructor of the superclass
+    super to call the constructor of the superclass
+    call receives the parameters the types of values taht the superclass constructor requires
+
+Calling a superclass method
+    you can call the methods defined in the superclass by prefixing them with super
+Programming Exercise
+    Person and subclasses
+
+The actual type of an object dicates which method is executed
+    an objects type decides what the methods provided by the object are
+    the method to be executed is chosen based on the actual type of the object, which means the class whose constructor is called when the object is created
+    if no definiton, the version of the method is chosen from the class taht is closet to the actaul type in the inheritance hierarchy
+    Polymorphism
+        regardless of the type of the variable, the method that is executed is always chosen based on the actual type of the object
+        Objects are polymorphic, can be used via many different variable types
+        executed method always relates to the actual type of the object
+
+When is inheritance worth using
+    Inheritance is a tool for building and specializing hierarchies of concepts, a subclass is always a special case of the superclass
+    if the class to be created is a special case of an existing, than the class can be created using an extension
+    if the subclass doesnt need or use some of the inherited functionality, inheritance is not necessary
+    if inheritance is more than 2 or 3 levels deep, the structure of the program can be improved
+    If an object owns or is composed of other objects, inheritance should not be used
+        there should be only one reasion for each class to change, inheriting adds more responsiblities to a class, you should form multiple classes of the class
+    subclass must be a special case of the superclass
+Programming Exercise
+    Warehousing
+
+Abstract Classes
+    clear concept, but it is not a good candidate for an object in itself
+    concept would be beneficial from the point of view of inheritance, includes variables and functionality that are shared by all classes that would inherit it
+        not be able to create instances of the concept itself
+    Abstract class combines interfaces and inheritance
+        can only create instances of subclasses of an abstract class
+    abstract classes are used in situations where the conecpt that the class represents is not a clear independent concept
+    define an abstract class with abstract
+        public abstract class
+    greatest difference between interfaces and abstract classes is that abstract classes can contain object variables and constructors in addition to methods
+Programming Exercise
+    DifferentKindsOfBoxes
+    
+

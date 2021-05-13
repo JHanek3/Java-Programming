@@ -1,0 +1,74 @@
+Interfaces
+    interfaces are used to define behavoir thats required from a class, like its methods
+    defined same way but with public interface instead of public class
+    defined behavoir through method names and their return values, dont always include the actual implementations of the method
+    classes that implmement the interface decide how th emethods defined in the interface are implemented
+    when a class implements an interface, it signs an agree ment
+        agreement dictates that the class will implmement the methods defined by the interface
+        methods are not implmented in the class, the program will not function
+    interface ddefines only names, parameters and return values of the required methods
+Programming exercise
+    TacoBoxes
+
+Interface as Variable Type
+    The type of a variable is always stated as its introduced
+        two kinds primitive (int, double) and reference-type (objects)
+    an object's type can be other than its class
+        Ebook is both Readable and Ebook
+    because an interface can be used as a type, its possible to create a list that contains objects of the interface's type
+    type conversion suceeds, if and only if the variable is of the type that is being converted to
+        not good practice only use with equals method
+
+Interfaces as Method Parameters
+    true benefits are reaped when they are used as the type of parameter provided to a method
+Programming Exercise
+    Interface in a Box
+
+Interface as a return type of a method
+    interfaces can be used as return types in methods
+    class Factory that be asked to construct different objects that implement the Packable interface
+    Reducing dependencies between classes
+        Packer does not depened on the classes that implmement the Packable interface, instead it just depends on the interface
+        make possible to add new classes that implement the interface without changing the Packer class
+            adding new Packable classes does not affect the classes that use the Packer class
+ 
+Built-in interfaces
+    List, Map, Set, Collection
+
+The List interface
+    defines the basic functionality related to lists
+    ArrayList class implmements the List interface, one can also use it through the list interface
+    LinkedList constructs a list where each element contains a reference ot the next element in a list
+        search from beginning until index
+        adding is fast
+    ArrayList saves objects to an array where fetching an object with a specified index is very fast
+        backed by an array, which needs to be resized each time it gets full
+        resizing the array requires creating a new array and copying the values from the old array to the new one
+    However interface programming is beneficial, implement your data structures through the interfaces
+Programming Exercise
+    List as a method parameter
+
+The Map Interface
+    defines the basic behavoir associated with hash tables
+    keySet method returns a set of elements that implement the Set interface
+Programming Exercise
+    Map as a method parameter
+
+The Set Interface
+    functionality related to sets
+    sets always contain 0 or 1 amounts of any given object
+    No way assumes the order of a set of elements
+    If created objects from custom classes are added to the HashSet object, they must have both equals and hashCode methods defined
+Programming Exercise
+    Set as a method parameter
+
+The collection interface
+    functinality related to collecitons
+    lists and sets are categorized as collections in java
+        both list and set interfaces implement the collecito interface
+    provides contains and determines the size of collections
+    also determines how the collection is iterated over
+        directly or indirectly inherits the functionality required for a for-each loop
+Programming Exercise
+    Online Shop
+    

@@ -53,3 +53,22 @@ JAVA Swing first programs
         MouseMotionAdapter is used for receiving mouse motion events
         Display the coordinates of a mouse pointer in a label component
         MouseMoveEventEx.java
+    
+    Menus and Toolbars
+        A menu is a group of commands located in a menuber
+        A tollbar has buttons with some common commands in the application
+        Use the following components
+            JMenuBar - implements a menu bar
+            JMenu - implements a menu, a popup window containing JMENUItems that is displayed when the user slects an item on JMenuBar
+            JMenuItem - implements an item in a menu
+            JSeparator - provides a general purpose component for implementing divider lines
+            JCheckBoxMenuItem - implements a menu item that can be selected or deselected
+            JRadioButtonMenuItem - implmements a radio button menu item
+            ButtonGroup - creates a multiple-exclusion scope for a set of buttons
+            JPopupMenu - implmements a popup menu
+            JToolBar - implements a toolbar, a component that is useful for displaying commonly used actions
+        Swing JMenuBar
+            simple menubar example, show a menu with one item, selecting the exit menu item will close the application
+        Swing Submenu
+            
+        
