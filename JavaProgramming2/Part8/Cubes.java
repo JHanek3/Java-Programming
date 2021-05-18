@@ -14,6 +14,7 @@ public class Cubes {
                 System.out.println(number * number * number);
             }
         }
+        scanner.close();
         
 
     }

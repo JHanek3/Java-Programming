@@ -1,0 +1,96 @@
+Handling collections with streams
+    create a stream from a collection
+    filter the values of a stream
+    transform the values of a stream
+    collect values of a stream to another collection
+Lambda expression
+Order objects using the Java Comparable interface
+    regex, enumerate type and interator
+
+Handling Collections as streams
+    collections as streams of values
+    stream is a way of going through a colleciton of data such that the programmer determines the operation to be performed on each value
+        no record is kept
+    with streams, the programmer defines a sequence of events that is executed for each value in a collection
+    stream does not change the values in the original data collection
+        merely processes them
+    retain transformations, need to compile into another data collection
+    stream can be formed from any object that implements the Collection interface with the stream() method
+        string values are mapped to integer using mapToInt(value -> conversion)
+        then use filter
+        .count()
+Programming Exercise
+    Average of Numbers
+    Average of Selected Numbers
+
+Lambda Expressions
+    why are function written in the form value -> value > 5?
+    called lambda expression
+    shorthand provided by Java for anonymous methods that do not have an owner, not part of a class or interface
+    function contains both the parameter definition and the function body
+    functions that handle stream elements cannot change values of variables outside of the function
+        due to static method behavoir, during a method call there is no access to any variables outside of the method
+
+Stream Methods
+    divided into two categories, intermediate operations for processing elements or terminal operations that the processing of elements
+    filter and mapToInt intermediate operations
+        return a value that can be further processed
+    average method is a terminal operation
+        returns a value to be processed
+    Starting point list of values, stream() method called
+        a stream of lilst values is created, values are dealt with individually
+        stream values then become filtered
+        map method can be used to map values in a stream from one form to another
+        collect method collects the values in a stream into a collection provided to it
+        .collect(Collectors.toCollection(ArrayList::new));.
+Programming Exercise
+    Positive Numbers
+
+Terminal Operators
+    count, counting the number of values on a list 
+    forEach, for going through a list values
+        what is done to each list value and terminated the stream processing
+    collect, gathering the list values into a data structure
+        collect stream values into another collection
+        collect method is given as a parameter to the Collectors objects
+    reduce, for combining the list items
+Programming Exercise
+    Divisble
+
+Reduce method is useful when you want to combine stream elements to some other form
+    reduce(*initialState*, (*previous*, *object*) -> *actions on the object*)
+    int sum = values.stream()
+        .reduce(0, (previousSum, value) -> previousSum + value);
+    System.out.println(sum);
+
+Intermediate Operations
+    methods that return a stream
+        can call intermediate operations sequentially
+    converting a value from one to another with map
+        mapToInt
+    filter, distinct and sorted
+Programming exercise
+    Printing User Input
+    Limited Numbers
+    Unique Lastnames
+
+Objects and Stream
+    Handling objects using stream methods is natural
+    each stream method that deals with the streams values also enables you to call methods related to the values
+Programming Exercise
+    Weighting
+
+Files and Streams
+    Streams are very handy for handling files
+    file is read in stream form using Java's ready-made File class
+    lines method in the files allows you to create an input stream from a filew, allowing you to process the rows one by one
+        gets a path as a parameter, which is created using the 'get' method in the Paths class
+        get method is provided a string describing the file path
+Programming Exercise
+    Reading Files Per Line
+Stream methods make the reading of files taht are of predefined form relatively straightforward
+Programming Exercise
+    Books from File
+
+
+

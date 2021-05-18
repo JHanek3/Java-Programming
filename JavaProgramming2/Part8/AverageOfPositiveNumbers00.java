@@ -25,6 +25,7 @@ public class AverageOfPositiveNumbers00 {
         } else {
             System.out.println("Cannot calculate the average");
         }
+        scanner.close();
 
     }
 }

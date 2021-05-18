@@ -78,7 +78,11 @@ public class SimpleDate {
 
     // calculates a hash for the SimpleDate object, implement a calculation of the hash in a way that there are as few similar hashsed as possible for the years between 1900 and 2100
     public int hashCode() {
-        return this.year + this.month + this.day;
+        int hash = 7;
+        hash = 13 * hash + this.day; 
+        hash = 13 * hash + this.month;
+        hash = 13 * hash + this.year;
+        return hash;
     }
 
 }

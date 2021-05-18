@@ -1,0 +1,71 @@
+Other useful techniques
+String Builder
+    calling numbers + i, creates a new string
+    string creation, unnoticeable at a small scale
+        space is allocated in memory for each string
+    StringBuilder class provides a way to concatenate strings without the need to create them
+    new StringBuilder()
+        content is added to the object using the overloaded appened method
+    StringBuilder numbers = new StringBuilder();
+    for (int i = 1; i < 5; i++) {
+        numbers.append(i);
+    }
+    System.out.println(numbers.toString());
+
+Regular Expressions
+    defines a set of strings in compact form
+    verify the correctness of strings
+    definiong a suitable regex expression
+        matches method of the String class, which cheks whether the string matces the regular expression given as a parameter
+    if (number.matches("01[0-9]{7}"))
+
+Alternation (Vertical Line)
+    a vertical line indicates that parts of a regex are optional
+    00||111||0000 mathces 00 not 1111
+
+Affecting Part of a String (Parentheses)
+    you can use () to determine which part of a regex is affected by the rules inside the ()
+    00000 and 00001
+        00000|00001
+        0000(0|1) specifies the strings 
+    car(|s)
+        car or cars
+
+Quantifiers
+    particular sub-string is repeated in a string
+    * repeats 0 times
+    + repeats 1 time
+    ? repeats 0 or 1 times 
+    {a} repeats a times
+    {a,b} repeats a to b times
+    {a,} repeats at least a times
+
+Character Classes (Square Brackets)
+    can be used to specify a set of characters in a compact way
+    [145] means (1|4|5)
+    [a-c]* means the expression requies the string to only contain a-c
+Programming Exercise
+    Regular Expressions
+
+Enumerated Type - Enum
+    know the possible values of a variable in advance, you can use class of type enum
+    enumerated type to represent the values
+    enum lists the constant values it declares separated by a comma
+        conventionally written with capital letters
+    enums are comapred with an equals sign
+        enum fields get a unique number code
+
+Object references in Enums
+    enumerated types may contain object reference variables
+        set in an internal constructor of the class defining the enumerated type
+        private access modifier, cannot have a public constructor
+
+Iterator
+    hasNext(), used to ask if there are any objects still to be iterated over
+        yes, next() object in line can be requested
+    if you want to remove some of the objects from the list during traversal, you can do so using iterator
+        calling the remove method of the iterator object neatly removes the list the item returned by the iterator with the previous next call
+Programming Exercise 
+    Enum and Iterator
+    Sort Them Cards!
+    

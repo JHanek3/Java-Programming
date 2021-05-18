@@ -1,6 +1,3 @@
-
-import java.util.Objects;
-
 public class LicensePlate {
     // don't modify existing parts of this class
 

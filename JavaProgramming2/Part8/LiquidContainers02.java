@@ -52,6 +52,7 @@ public class LiquidContainers02 {
             }
 
         }
+        scan.close();
     }
 
 }

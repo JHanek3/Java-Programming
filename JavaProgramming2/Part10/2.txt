@@ -1,0 +1,60 @@
+The Comparable Interface
+    Comparable Interface - defines the compareTo method used to compare objects
+    class implements the Comparable interface, objects created from that class can be sorted
+    compareTo method required by the Comparable interface receives as its parameter the object to which the this object is compared
+        this object comes before the object received, return negative number
+        otherwise positive number
+    natural ordering
+    compareTo method required by the interface returns an integer that informs us of the order of comparison
+    simplified version
+        public int compareTo(Member member) {
+            return this.length - member.getHeight();
+        }
+    objects of any class that implement the Comparable interface can be sorted using sorted
+        only items in the stream are sorted
+    organize the original list, sort method of the collections class should be used
+        list implement the comparable interface
+Programming Exercise
+    Wage Order
+    Students on alphabetical order
+
+Implementing Multiple Interfaces
+    a class can implement multiple interfaces
+        implements iterface1, interface2
+    implementing multiple interfaces requires implementation of all methods of said interface
+
+Sorting Methods as a Lambda Expression
+    sort the list without having to implement the compareable interface
+    both sort of Collections class and stream sorted method accept a lambda expression as a parameter
+    both methods can be provided with an object that implements the compareable interface, which defines the desired order
+        the lambda expression is used to create this object
+        persons.stream().sorted((p1, p2) -> {
+            return p1.getBirthYear() - p2.getBirthYear();
+        }).forEach(p -> System.out.println(p.getName()));
+        Collections.sort(persons, (p1, p2) -> p1.getBirthYear() - p2.getBirthYear());
+    when comparing String we can use the compareTo method provided by the String class
+        returns an integer that describes the order of both the string give to it as a parameter and the string thats calling it
+Programming Exercise
+    Literacy Comparison
+
+Sorting By Multiple Criteria
+    sometimes want to sort items based on a number of things
+    Comparator class
+        comparing and thenComparing
+            comparing method is passed the value to be compared First
+            thenComparing method is the next value to be comapred
+                can be used many times
+        when we sort object the comparing and thenComparing methods are given a reference
+            to the object's type - th emethod is called in order and the values returned by
+            the method are compared
+            Class::method
+    Comparator<Film> comparator = Comparator
+              .comparing(Film::getReleaseYear)
+              .thenComparing(Film::getName);
+    Collections.sort(films, comparator);
+Programming Exercise
+    Literature
+    
+
+    
+    

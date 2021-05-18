@@ -63,6 +63,7 @@ public class LiquidContainers00 {
                 }
             }
         }
+        scan.close();
     }
 
 }
