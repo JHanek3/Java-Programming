@@ -1,0 +1,71 @@
+Part 11
+    Become Familiar with packages in Java and learn what the different parts of an import statement mean
+    Practice using execeptions in java
+Class Diagrams
+    used in designing and modeling softeare to describe classes and their relationships
+    model software in high level of abstraction
+    diagram shows the names and attributes of the classes, connections between the classes and sometimes the methods of the classes
+    UML
+Describing class and class attributes
+    class is represented by a rectabngle with the name of the class written on the top, line below the name of the class divides the name from the list
+        of attributes (names and types of class variables)
+    attributeName: attributeType
+    + public, - private
+Describing class constructor
+    list the contructor and all other methods below the attributes
+    +/- depending on visibilty of the method, method name, paratmeters and their types
+    +Person(initialName: String)
+Describing Class Methods
+    constructors are listed first and then class methods
+    also write the return type of a method in the class diagram
+    +printPerson(): void
+Class diagram describes the structure of an object not its functionality
+Programming Exercise
+    Customer Class Diagram, Customer Class with 3 private attributes that are all strings
+    Customer
+    _________
+    -name:String
+    -address: String
+    -email: String
+    Book and Plane
+
+Connections between classes
+    connections are shown via arrows
+        arrows also show the direction
+    variables which refer to other objects are not written with the rest of the class attributes, but are shown as connections between the classes
+    Book -->author Person
+    A Book knows the author, but a Person does not know about books they are the author of
+    List?
+        Book -->* Person
+        star tells us that a book can have between 0 and unlimited number of authors
+Programming Exercise
+    Show and ticket
+    arrow from ticket to show
+
+No arrowhead connection, both classes know about each other
+    no star on the connection, the connection is singular
+Programming Exercise
+    Student and University
+    Two classes, university has star to students and students has a singular connection to university
+
+Describing inheritance
+    inheritance is decribed by an arrow with a triangle head
+    triangle points to the class being inherited from
+    engine inherits the class part
+    add description <<abstract>>
+        above the name of the class
+Programming Exercise
+    The Player and The Boot
+
+Describing interfaces
+    written <<interface>>
+    implementing an interface is shown as a dashed arrow with a triangle arrowhead
+    Book ----> <<interface>> Readable
+
+How these should be drawn?
+    Describe a problem and a problem-domain to others
+    designing a program with multiple classes
+    Design phase
+    Suitable level of abstraction
+Programming Exercise
+    Bigger Class Diagram

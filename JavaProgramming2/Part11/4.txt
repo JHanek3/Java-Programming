@@ -1,0 +1,11 @@
+PrintWriter class offers the funcitonality to write to files
+    the constructor of the PrintWriter class receives as its parameter a string that represents the locaiton of the target file
+    PrintWriter writer = new PrintWriter("file.txt");
+    writer.println("Hello file!"); //writes the string "Hello file!" and line change to the file
+    writer.println("More text");
+    writer.print("And a little extra"); // writes the string "And a little extra" to the file without a line change
+    writer.close(); //closes the file and ensures that the written text is saved to the file
+    method print doe snot add line changes, have to add them yourself
+    println adds a new line change to the end of the parameter string it receives
+Programming Exercise
+    Main01.java (SaveableDictionary)

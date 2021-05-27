@@ -1,0 +1,64 @@
+Exceptions
+    program ends with an error, an exception is thrown
+    some exceptions always have to prepare for, such as errors when reading from a file or network connection
+Handling Exceptions
+    try{} catch (Exception e) {} block structure
+    try starts a block containing the code which might throw an exception
+    catch is followed by the type of the exception handled by the block
+    causing an exception == throwing an exception
+Exceptions and resources
+    there is a seperate exception handling for reading operating system resources such as files
+        try-with-resources exception handling
+    resource to be opened is added ot a non-compulsory part of the try block declaration in brackets
+    try (Scanner reader = new Scanner(new File("file.txt")))
+Shifting the Responsibility
+    methods and constructors can throw exceptions
+    exceptions we have to handle vs. exceptions we do not have to handle
+    wrapping the code into a try-catch block or throwing them out of the method
+    throw a method forward with method throws Exception
+        now the method realLines has to either handle the exception or shift the responsibility forward
+    exception can be thrown to the program executor, stops the program execution when an error causing an exception occurs
+Throwing exceptions
+    throw command throws an exception
+        public class Grade {
+        private int grade;
+
+        public Grade(int grade) {
+            if (grade < 0 || grade > 5) {
+                throw new IllegalArgumentException("Grade must be between 0 and 5.");
+            }
+
+            this.grade = grade;
+        }
+
+        public int getGrade() {
+            return this.grade;
+        }
+    }
+Programming Exercise
+    Validation Parameters
+
+Types of Exceptions
+    exceptions that must be handled and exceptions that do not have to be handled
+    must be handled are checked for during compilation
+        try-catch or throws
+        IOException and FileNotFoundException
+    some exceptions are not checked for during compilation
+        thrown during execution
+        no try-catch block instead throw new IllegalArgumentException();
+
+Exceptions and Interfaces
+    an interface can have methods which throw an exception
+    if an interface declares a throws Exception to a method
+        the class implementing this interface must also have this attribute
+        class does not have to throw an error
+
+Details of the exception
+    a catch block defines which exception to prepare for with catch(Exception e)
+        details of the exception are saved to the e variable
+    exception class has some useful methods
+        printStackTrace() - prints the stack trace, shows how we ended up with an exception
+        read a stack trace from bottom up, bottom is the first call
+Programming Exercise
+    Sensors and Temperature
+    

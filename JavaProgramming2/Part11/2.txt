@@ -1,0 +1,40 @@
+Packages
+    name the classes in a sensible manner and planning them so that each class has one clear responsibility
+        divide the classes into packages
+    classes in one package might share functionality, purpose or some othe logical property
+    dictionaries in which the source code files are organized
+    right click on source packages and select new java package
+    create classes inside a package the same way you can in the default package
+        package library;
+        public class Program
+    the package of a class is noted at the beginning of the source file, below the claass is in the package
+    every package including the default package may contain other packages
+        libary.domain - used to refer to the storage space of the classes that represent the coneccpts of the problem domain
+    a class can access classes inside a package by using the import statement
+        the class book in the package library.domain is made available with
+        import library.domain.Book;
+    imports after source code file
+Programming Exercise
+    First Packages, functionality inside mooc package
+    Three packages
+
+Directory Structure in a file system
+    every project is in your computer's file system or on a centralized server
+    src/main/java contains the source code files of the program
+        package of a class is library then src/main/java/library
+Packages and access modifiers
+    private usde to define variables and methods that ore only visible inside the class where they are defined
+        cannot be used outside
+    public available for everyone to use
+    you can opt out of public and void, so that only the classes inside the package can use the methods and variables
+        void ....
+        if the class is in a different package, the method printTitle will not be caleld
+
+Classes that represent concepts of the problem domain
+    classes that represent concepts of the problem domain are often placed inside a package called domain
+    application logic is typically kept separate from the classes that represent concepts of the problem domain
+        package logic
+    user interface is seperate from the application logic and the classes that represent the problem domain
+Programming Exercise
+    Flight Control
+    
