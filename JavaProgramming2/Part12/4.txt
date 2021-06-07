@@ -1,0 +1,14 @@
+Multidimensional Data
+    One dimensional arrays, indexx tells uf the location of a value in only one dimension
+    multidimensional, we need the indexes of a value in each dimension to access the value
+        dealing with coordinates
+    int rows = 2;
+    int col = 3;
+    int[][] twoDimensionalArray = new int[rows][columns]
+    iterate over with two nested for loops
+    for row
+        for col
+Programming Exercise
+    Array as a string
+    Magic Square
+    

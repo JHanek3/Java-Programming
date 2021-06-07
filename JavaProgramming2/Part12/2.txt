@@ -1,0 +1,44 @@
+ArrayList and hash table
+    ArrayList and HashMap are commonly used data structures in programing
+    Take a look at their actual implementation
+
+A brief recap of arrays
+    An array is an object that contains a limited number of places for values
+    size of an array is always predetermined, chosen when the array is created
+    array type is defined with [] preceded by the type of the elements in the array
+        created with a new call
+    int[] numbers = new int[3]
+    elements of an array are referred to by the indexes
+        numbers[0] = 2;
+        numbers[0]
+    to discover the length of the array
+        numbers.length
+    examining the numbers one by one can be used with a for loop
+    for (int i = 0; i < numbers.length; i++){}
+    Programming Exercise
+        Sum these for me (Program02)
+    Arrays can be used in the exact same manner as other variables
+        object variables, method parameters, return values of methods and so on
+    significant portion of generally used data structures use arrays in their internal implementation
+
+Lists
+    Java ArrayList uses an array
+    the type of elements in the array is defined by the type parameter given to the ArrayList
+    add, contains, remove, and get
+    Creating a new list
+        ArrayList class, grows as needed
+    Checking the existence of a value
+        each java object inherits the Object class
+            public boolean equals(Object object)
+    Removing a value
+    Programming Exercise
+        List.java
+
+Hash Map
+    implemented as an array, in which every element includes a list
+    list contain key, value pairs
+    user can search from the hash map based on the key, also add new key-value pairs to it
+        each key can appear at most once
+    when a new pair is stored in a hash map, we calculate a hash value based on the key stored
+        hash value decides the index of the interanl array that will be used for storing
+    HashMap and Pair.java

@@ -1,0 +1,49 @@
+Type parameters
+    learn what ArrayList<String> actually means
+    implement classes that use type parameters
+    understand how ArrayList and HashMap are implemented, and you will implement your own versions
+    learn how to create random numbers, and practice using some Java tools to create random numbers.
+    learn how multidimensional data can be presented, and how to use multidimensional arrays
+
+Type parameters
+    meant with the concept of a generic type parameter
+    familiar with already existing Java classes that make use of generic type parameters
+    create classes of your own that make use of generic type parameters
+
+Since using Lists, we have given data structures the type of the values taht we want them to store
+    ArrayList<String>
+    How implement a class taht can contain objhects of a given type?
+    Generics relates to how classes taht store objects can store objects of a freely chosen type
+        choice is baed on generic tpye parameter in the definition of the classes, which makes it possible to choose the type(s) at the moment of the
+        object's creation
+    After the name of the class, follow it with a chosen number of type parameters
+        public class Class<TypeParameter1, TypeParameter2, ...>
+    public class Locker<T> {
+        private T element;
+        public void setValue(T element) {
+            this.element = element
+        }
+
+        public T getValue() {
+            return element;
+        }
+    }
+    public class Locker<T> indicates that the Locker class must be given a type parameter in its constructor
+        after constructor call is executed, all the varaibles stored in that object are going to be of the type that was given with
+            the constructor
+    Locker<String> string = new Locker<>();
+    string.setValue(":)");
+    string.getValue();
+    Changing the type parameters allows for creating lockers that store objects of other types
+    Locker<Integer> integer = new Locker<>();
+    integer.setValue(5)
+    There is no maxium on the number of type parameters, all dependent on the implementation
+
+ArrayList receives a single type parameter
+    HashMap receives two
+ArrayList
+    internal implementation uses a generic type parameter
+    same principle holds true for interfaces
+Proramming Exercise
+    Hideout
+    Pipe
